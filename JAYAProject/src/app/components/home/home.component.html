@@ -1,11 +1,42 @@
 <div class="container bg-secondary">
-  <div class="search">
-    <form>
-      <div class="form-group">
-        <label for="search">Enter City for Weather Results</label>
-          <input class="form-control form-control-lg" type="text" name="search" placeholder="Search" [(ngModel)]="search">
-          <button type="button" (click)="getWeather()">Submit</button>
+  <div class="row">
+    <div class="search col-11">
+      <form>
+        <div class="form-group">
+          <label for="searchField">Enter City for Weather Results</label>
+          <input class="form-control form-control-lg" type="text" name="searchField" id="searchField"
+            placeholder="Search" [(ngModel)]="search">
+          <button type="submit" (click)="getWeather()">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="minutely col-11">
+        <h1>Hour Forecast per Minute</h1>
+        <div *ngFor="let minute of minutely; let i = index">
+          <p>Minute: {{i}} Precipitation Intensity: {{minute.precipIntensity}}</p>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="hourly col-11">
+        <h1>Daily Forecast per Hour</h1>
+        <div *ngFor="let hour of hourly; let i = index">
+          <p>Hour: {{i}} Temperature: {{hour.temperature}}</p>
+        </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="daily col-11">
+      <h1>7 Day Forecast</h1>
+      <div *ngFor="let dail of daily; let i = index">
+        <div class="col">
+        <p>Day: {{i}} Max Temperature: {{dail.temperatureHigh}}</p>
       </div>
-    </form>
+      </div>
+    </div>
   </div>
 </div>

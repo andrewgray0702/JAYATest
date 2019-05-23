@@ -10,6 +10,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
   getWeather(search) {
     console.log("weather service")
-    return this.http.get('/api/location/city', search)
+    console.log(search);
+    return this.http.post('http://localhost:3000/api/location/city', search)
   }
 }
