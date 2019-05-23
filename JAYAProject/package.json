@@ -2,7 +2,8 @@
   "name": "jayaproject",
   "version": "0.0.0",
   "engines": {
-    "npm": "10.15.3"
+    "node": "10.15.3",
+    "npm": "6.4.1"
   },
   "scripts": {
     "ng": "ng",
