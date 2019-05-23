@@ -11,6 +11,6 @@ export class WeatherService {
   getWeather(search) {
     console.log("weather service")
     console.log(search);
-    return this.http.post('http://localhost:3000/api/location/city', search)
+    return this.http.post('/api/location/city', search)
   }
 }
