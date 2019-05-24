@@ -1,42 +1,56 @@
-<div class="container bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" name="searchField" [(ngModel)]="search" placeholder="Search"
+      aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="getWeather()">Search</button>
+    <div *ngIf="loading" class="spinner-border text-primary ml-3" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+  </form>
+</nav>
+
+<div class="bg1">
   <div class="row">
-    <div class="search col-11">
-      <form>
-        <div class="form-group">
-          <label for="searchField">Enter City for Weather Results</label>
-          <input class="form-control form-control-lg" type="text" name="searchField" id="searchField"
-            placeholder="Search" [(ngModel)]="search">
-          <button type="submit" (click)="getWeather()">Submit</button>
-        </div>
-      </form>
+    <div class="minutely shadow-lg mt-2 col-6">
+      <h1 class="center">Hour Forecast per Minute</h1>
+      <div *ngIf="minuteChart">
+        <canvas id="canvas">
+          {{ minuteChart }}
+        </canvas>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="minutely col-11">
-        <h1>Hour Forecast per Minute</h1>
-        <div *ngFor="let minute of minutely; let i = index">
-          <p>Minute: {{i}} Precipitation Intensity: {{minute.precipIntensity}}</p>
-        </div>
+    <div class="hourly shadow-lg col-6 mt-2">
+      <h1 class="center">Daily Forecast per Hour</h1>
+      <div *ngIf="hourChart">
+        <canvas id="canvas2">
+          {{ hourChart }}
+        </canvas>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="hourly col-11">
-        <h1>Daily Forecast per Hour</h1>
-        <div *ngFor="let hour of hourly; let i = index">
-          <p>Hour: {{i}} Temperature: {{hour.temperature}}</p>
-        </div>
 
+
+  <div class="row">
+    <div class="daily shadow-lg col-6 mt-2 mb-2">
+      <h1 class="center">7 Day Forecast</h1>
+      <div *ngIf="hourChart">
+        <canvas id="canvas3">
+          {{ dailyChart }}
+        </canvas>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="daily col-11">
-      <h1>7 Day Forecast</h1>
-      <div *ngFor="let dail of daily; let i = index">
-        <div class="col">
-        <p>Day: {{i}} Max Temperature: {{dail.temperatureHigh}}</p>
-      </div>
-      </div>
+    <div class="daily shadow-lg col-6 mt-2 mb-2 pb-3">
+      <h1 class="center">Map</h1>
+      <div *ngIf="lat">
+      <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+          <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+        </div>
     </div>
   </div>
 </div>
