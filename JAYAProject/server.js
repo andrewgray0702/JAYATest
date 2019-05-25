@@ -14,3 +14,4 @@ app.get('*', (req, res) => {
     res.sendFile(__dirname + '/dist/JAYAProject/index.html');
 });
 app.listen(port, host);
+console.log('server started on port' + ' ' + port)

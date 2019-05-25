@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" name="searchField" [(ngModel)]="search" placeholder="Search"
@@ -11,7 +13,7 @@
 
 <div class="bg1">
   <div class="row">
-    <div class="minutely shadow-lg mt-2 col-6">
+    <div class="display shadow-lg mt-2 col-6">
       <h1 class="center">Hour Forecast per Minute</h1>
       <div *ngIf="minuteChart">
         <canvas id="canvas">
@@ -22,7 +24,7 @@
   </div>
 
   <div class="row">
-    <div class="hourly shadow-lg col-6 mt-2">
+    <div class="display shadow-lg col-6 mt-2">
       <h1 class="center">Daily Forecast per Hour</h1>
       <div *ngIf="hourChart">
         <canvas id="canvas2">
@@ -34,7 +36,7 @@
 
 
   <div class="row">
-    <div class="daily shadow-lg col-6 mt-2 mb-2">
+    <div class="display shadow-lg col-6 mt-2 mb-2">
       <h1 class="center">7 Day Forecast</h1>
       <div *ngIf="hourChart">
         <canvas id="canvas3">
@@ -44,7 +46,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="daily shadow-lg col-6 mt-2 mb-2 pb-3">
+    <div class="display shadow-lg col-6 mt-2 mb-2 pb-3">
       <h1 class="center">Map</h1>
       <div *ngIf="lat">
       <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
