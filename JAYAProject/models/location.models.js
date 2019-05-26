@@ -5,7 +5,7 @@ var client = new MapboxClient('pk.eyJ1IjoiYW5kcmV3Z3JheSIsImEiOiJjanZ5ZWlwMDkwZj
 
 async function getLocation(req, res) {
     try {
-    let response = await fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/" + "Omaha" + ".json?access_token=pk.eyJ1IjoiYW5kcmV3Z3JheSIsImEiOiJjanZ5ZWlwMDkwZjNpNGRtcXJrajQ3cG44In0.Yn7UkfJamhhLMtEolCxfOw&autocomplete=true");
+    let response = await fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/" + "Omaha" + ".json?access_token=pk.eyJ1IjoiYW5kcmV3Z3JheSIsImEiOiJjanZ5ZWlwMDkwZjNpNGRtcXJrajQ3cG44In0.Yn7UkfJamhhLMtEolCxfOw&autocomplete=true&fuzzyMatch=true");
     let data = await response.json();
     let features = (data['features']);
     var long = features[0].center[0];
