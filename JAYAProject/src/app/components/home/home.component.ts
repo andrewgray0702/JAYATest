@@ -43,6 +43,8 @@ export class HomeComponent implements OnInit {
   loading: boolean;
   lng: number;
   zoom: number = 15;
+  error: string;
+  location: string;
   constructor(private weatherService: WeatherService) { }
   getWeather() {
     //console.log(this.search);
@@ -50,10 +52,14 @@ export class HomeComponent implements OnInit {
     this.weatherService.getWeather({
       "search": this.search
     }).subscribe(res => {
+      if(res['error']){
+        this.error = res['error'];
+      }
+      this.location = res['location'];
       this.lat = parseFloat(res['latitude']);
       this.lng = parseFloat(res['longitude']);  
 
-      console.log(this.lat, this.lng);
+      //console.log(this.lat, this.lng);
       this.daily = res['daily'].data;
       // console.log(this.daily);
       this.hourly = res['hourly'].data;

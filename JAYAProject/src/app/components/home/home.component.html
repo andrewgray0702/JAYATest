@@ -10,6 +10,15 @@
       </div>
   </form>
 </nav>
+<div *ngIf="location">
+  
+  <h1 class="center">Location: {{location}}</h1>
+</div>
+<div *ngIf="error">
+  <div class="bg-alert">
+  <h1 class="center">Error: {{error}}</h1>
+</div>
+</div>
 
 <div class="bg1">
   <div class="row">
