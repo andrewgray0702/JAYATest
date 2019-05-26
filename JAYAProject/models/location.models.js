@@ -1,7 +1,6 @@
-const Request = require('request');
+
 const fetch = require('node-fetch');
-var MapboxClient = require('mapbox');
-var client = new MapboxClient('pk.eyJ1IjoiYW5kcmV3Z3JheSIsImEiOiJjanZ5ZWlwMDkwZjNpNGRtcXJrajQ3cG44In0.Yn7UkfJamhhLMtEolCxfOw');
+
 
 async function getLocation(req, res) {
     try {
