@@ -20,13 +20,28 @@ body, html {
     text-align: center;
 }
 .display{
-    background-color: #F3E6CE;
+    background-color: white;
     margin: auto;
+    border-radius: 25px;
+    height: 60vh;
+}
+.chart {
+    height: 50vh;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 agm-map {
-    height: 300px;
-    margin-bottom: 20px;
+    height: 50vh !important;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 .bg-navbar{
-    background-color: #f8f9fa;
+    // background-color: #f8f9fa;
+    background-color: white !important;
+    margin-bottom: 0 !important;
+}
+.transparent{
+    background-color: white !important;
+    border-color: black !important;
+    color: black !important;
 }

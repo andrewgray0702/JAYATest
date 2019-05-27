@@ -45,8 +45,30 @@ export class HomeComponent implements OnInit {
   zoom: number = 15;
   error: string;
   location: string;
+  displayMinutely: boolean = false;
+  displayHourly: boolean = false;
+  displayDaily: boolean = true;
   constructor(private weatherService: WeatherService) { }
-  getWeather() {
+  clickMinutely(){
+    this.displayHourly = false;
+    this.displayDaily = false;
+    this.getWeather();
+    this.displayMinutely = true;
+  }
+  clickHourly(){
+    this.displayDaily = false;
+    this.displayMinutely = false;
+    this.getWeather();
+    this.displayHourly = true;
+  }
+  clickDaily(){
+    this.displayHourly = false;
+    this.displayMinutely = false;
+    this.getWeather();
+    this.displayDaily = true;
+  }
+
+  getWeather() {  // makes api call
     //console.log(this.search);
     this.loading = true;
     this.weatherService.getWeather({
