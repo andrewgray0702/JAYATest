@@ -34,7 +34,7 @@
     "chartjs": "^0.3.24",
     "core-js": "^2.5.4",
     "express": "^4.17.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mapbox": "^1.0.0-beta10",
     "node-fetch": "^2.6.0",
     "popper.js": "^1.14.7",
